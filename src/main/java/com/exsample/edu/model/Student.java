@@ -1,4 +1,4 @@
-package org.exapmle.edu.model;
+package com.exsample.edu.model;
 
 public class Student {
     private long id;
