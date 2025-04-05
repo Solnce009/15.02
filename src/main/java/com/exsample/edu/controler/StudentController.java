@@ -2,17 +2,18 @@ package com.exsample.edu.controler;
 
 import com.exsample.edu.model.Student;
 import com.exsample.edu.repository.StudentRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequiredArgsConstructor
 public class StudentController {
     private final StudentRepository repository;
     private long countId = 0;
+
+    public StudentController(StudentRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping("/student")
     public List<Student> getStudentList() {
